@@ -1,0 +1,117 @@
+.bubbles {
+  margin-bottom: 24px;
+}
+
+.bubbles-title {
+  font-family: var(--font-display, inherit);
+  font-size: 18px;
+  color: var(--chai-dark-blue);
+  margin: 0 0 6px;
+}
+
+.bubbles-hint {
+  color: var(--color-text-muted, #5a6c7c);
+  font-size: 13px;
+  margin: 0 0 12px;
+}
+
+.bubbles-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 20px;
+  background: #fff;
+  border: 1px solid #E1E7ED;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 62, 120, 0.06);
+}
+
+.bubble {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  font-family: var(--font-display, inherit);
+  box-shadow: 0 4px 14px rgba(0, 62, 120, 0.18);
+  transition: transform 220ms ease, box-shadow 220ms ease, outline-color 160ms ease;
+  outline: 0 solid transparent;
+  outline-offset: 3px;
+  animation: bubble-pop 380ms ease-out both;
+}
+
+@keyframes bubble-pop {
+  from { transform: scale(0.6); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.bubble.is-static {
+  cursor: default;
+}
+
+.bubble:not(.is-dim):not(.is-static):hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 10px 24px rgba(0, 62, 120, 0.28);
+}
+
+.bubble.is-active {
+  outline: 3px solid #F4B71B;
+}
+
+.bubble.is-dim {
+  opacity: 0.35;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.bubble-count {
+  font-weight: 800;
+  font-size: 1.6em;
+  line-height: 1;
+}
+
+.bubble-name {
+  font-family: var(--font-primary, inherit);
+  font-weight: 700;
+  font-size: 0.55em;
+  line-height: 1.15;
+  text-align: center;
+  margin-top: 6px;
+  padding: 0 4px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  max-width: 90%;
+}
+
+.bubbles-legend {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--color-text-muted, #5a6c7c);
+}
+
+.bubbles-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bubbles-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+@media (max-width: 720px) {
+  .bubbles-grid { gap: 10px; padding: 18px 12px; }
+}

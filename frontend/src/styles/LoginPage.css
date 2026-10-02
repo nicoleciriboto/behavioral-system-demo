@@ -1,0 +1,263 @@
+.login-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  min-height: 100vh;
+}
+
+/* ---- SIDEBAR STYLES ---- */
+.auth-sidebar {
+  background: var(--chai-dark-blue);
+  color: #fff;
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  justify-content: center;
+}
+
+.chai-logo {
+  width: 190px;
+  height: auto;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sidebar-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--chai-teal);
+  margin-bottom: 10px;
+}
+
+.sidebar-title {
+  font-family: var(--font-display);
+  font-size: 42px;
+  line-height: 1.1;
+  font-weight: 700;
+  margin: 0;
+}
+
+.sidebar-description {
+  margin: 0;
+  font-size: 17px;
+  max-width: 46ch;
+  color: #D5E7EF;
+}
+
+.sidebar-description strong {
+  color: #fff;
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.feature-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.feature-number {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--chai-teal);
+  font-weight: 700;
+  font-size: 13px;
+  display: grid;
+  place-items: center;
+}
+
+.feature-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.feature-title {
+  font-weight: 700;
+  color: #fff;
+}
+
+.feature-description {
+  color: #B9D3E4;
+  font-size: 14px;
+}
+
+/* ---- FORM STYLES ---- */
+.auth-form-container {
+  display: grid;
+  place-items: center;
+  padding: 48px 24px;
+  background: #fff;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 420px;
+  animation: chaiPop 260ms ease both;
+}
+
+.form-title {
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: var(--chai-dark-blue);
+  margin: 0 0 6px;
+}
+
+.form-subtitle {
+  margin: 0 0 26px;
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--chai-dark-blue);
+}
+
+.form-group input,
+.form-group select {
+  padding: 11px 13px;
+  border: 1px solid #D9DEE4;
+  border-radius: 6px;
+  font-size: 15px;
+  color: #333;
+  background: #fff;
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.error-message {
+  background: #FDECEE;
+  border-left: 4px solid var(--chai-dark-red);
+  color: #7C1220;
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* ---- BUTTON STYLES ---- */
+.btn {
+  width: 100%;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+
+.btn-primary {
+  background: var(--chai-dark-blue);
+  color: #fff;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--chai-dark-blue);
+  border: 1px solid var(--color-border);
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-ghost:hover {
+  background: #F2F2F2;
+  border-color: var(--color-border-strong);
+}
+
+/* ---- RESPONSIVE DESIGN ---- */
+@media (max-width: 768px) {
+  .login-container {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-sidebar {
+    padding: 32px 24px;
+    gap: 24px;
+  }
+
+  .sidebar-title {
+    font-size: 32px;
+  }
+
+  .auth-form-container {
+    padding: 32px 16px;
+  }
+}
+
+/* ---- Password fields and the change-password screen ---- */
+
+/*
+ * Helper text under an input. Same grey as .form-subtitle so it reads as
+ * guidance rather than as an error.
+ */
+.form-hint {
+  margin: 6px 0 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--chai-grey);
+}
+
+.form-hint-error {
+  color: #7C1220;
+}
+
+/*
+ * Explains *why* the password matters, on the change-password screen. Uses the
+ * design system's callout background — the same light blue as the rest of the
+ * app's informational panels — rather than an error tone, because nothing has
+ * gone wrong.
+ */
+.form-callout {
+  background: var(--color-surface-callout);
+  color: var(--chai-dark-blue);
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}

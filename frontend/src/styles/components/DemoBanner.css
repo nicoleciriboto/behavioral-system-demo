@@ -1,0 +1,139 @@
+/**
+ * Demo banner — CHAI light blue with dark-blue text.
+ *
+ * Every colour here is a token from the CHAI identity palette
+ * (`_ds/.../tokens/colors.css`, loaded globally in index.html). This file used
+ * to carry its own amber-on-near-black hexes, which were off-system: they looked
+ * like a developer's warning strip bolted onto a CHAI product, which is exactly
+ * what a reviewer should not be shown.
+ *
+ * `--chai-light-blue` is the palette's designated callout background, and the
+ * token's own note pairs it with dark-blue text — so this is the combination the
+ * identity guide already sanctions for a standing notice, used as intended
+ * rather than approximated.
+ *
+ * The dark-blue bottom rule is load-bearing, not trim. The dashboard header
+ * directly below is `--chai-dark-blue`, and light blue is close enough in family
+ * to the app's own pale surfaces that without a hard edge the band would read as
+ * the first row of page content instead of as chrome wrapped around it.
+ */
+
+.demo-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 20px;
+  background: var(--chai-light-blue);
+  color: var(--chai-dark-blue);
+  font-size: 13px;
+  line-height: 1.4;
+  border-bottom: 2px solid var(--chai-dark-blue);
+  position: relative;
+  z-index: 200;
+}
+
+.demo-banner-text strong {
+  color: var(--chai-dark-blue);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.demo-banner-switch {
+  margin-left: auto;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+/* A solid navy pill on the gold band: unmistakably a control, and the same
+   primary colour as the app's own buttons. */
+.demo-banner-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-text-inverse);
+  background: var(--chai-dark-blue);
+  border: 1px solid var(--chai-dark-blue);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 160ms ease;
+}
+
+.demo-banner-button:hover {
+  background: var(--color-primary-hover);
+}
+
+.demo-banner-button:focus-visible {
+  outline: 2px solid var(--chai-dark-blue);
+  outline-offset: 2px;
+}
+
+.demo-banner-caret {
+  font-size: 10px;
+  opacity: 0.85;
+}
+
+.demo-banner-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 240px;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgba(0, 62, 120, 0.22);
+}
+
+.demo-banner-option {
+  display: block;
+  width: 100%;
+  padding: 7px 10px;
+  text-align: left;
+  font: inherit;
+  background: none;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.demo-banner-option:hover {
+  background: var(--color-bg-subtle);
+}
+
+/* The light blue the palette pairs with dark-blue text, so the current role is
+   marked by the same device the app uses for callouts. */
+.demo-banner-option.is-current {
+  background: var(--chai-light-blue);
+}
+
+.demo-banner-option.is-current .demo-banner-option-name::after {
+  content: ' · viewing';
+  font-weight: 500;
+  color: var(--chai-turquoise);
+}
+
+.demo-banner-option-name {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-strong);
+}
+
+.demo-banner-option-role {
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 720px) {
+  .demo-banner {
+    padding: 8px 14px;
+  }
+}

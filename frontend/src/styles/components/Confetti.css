@@ -1,0 +1,15 @@
+/* Confetti */
+.confetti-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 80;
+}
+
+.confetti-particle {
+  position: absolute;
+  top: 0;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}

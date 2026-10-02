@@ -1,0 +1,144 @@
+/* Onboarding Screen */
+.onboarding-screen {
+  min-height: 100vh;
+  background: #fff;
+}
+
+.onboarding-header {
+  background: var(--chai-dark-blue);
+  color: #fff;
+  padding: 44px 32px 88px;
+}
+
+.onboarding-container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.onboarding-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--chai-teal);
+}
+
+.onboarding-title {
+  font-family: var(--font-display);
+  font-size: 40px;
+  margin: 8px 0 14px;
+  font-weight: 700;
+}
+
+.onboarding-subtitle {
+  margin: 0;
+  max-width: 78ch;
+  font-size: 16px;
+  color: #D5E7EF;
+}
+
+.onboarding-content {
+  max-width: 1120px;
+  margin: -60px auto 0;
+  padding: 0 32px 56px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.behavior-card {
+  background: #fff;
+  border: 1px solid #D9DEE4;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 6px 22px rgba(0, 62, 120, 0.1);
+}
+
+.card-header {
+  border-top: 4px solid;
+  padding-top: 0;
+}
+
+.card-standard {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 14px;
+  margin-bottom: 4px;
+}
+
+.card-kicker {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: 21px;
+  color: var(--chai-dark-blue);
+  margin: 8px 0 6px;
+  line-height: 1.3;
+  /* Reserve two lines so the longer "How we lead the organization" title
+     keeps the behavior lists aligned across all three cards. */
+  min-height: 2.6em;
+}
+
+.card-description {
+  margin: 0 0 18px;
+  font-size: 13px;
+  line-height: 1.5;
+  /* Reserve two lines so single- and two-line descriptions keep the
+     behavior lists aligned across all three cards. */
+  min-height: 3em;
+  color: var(--color-text-muted);
+}
+
+.card-behaviors {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.behavior-badge {
+  background: var(--chai-light-blue);
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-weight: 700;
+  color: var(--chai-dark-blue);
+  font-size: 14px;
+}
+
+.onboarding-rules {
+  background: var(--chai-light-gold);
+  border-radius: 8px;
+  padding: 20px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 32px;
+}
+
+.rules-text {
+  flex: 1;
+}
+
+.rules-title {
+  font-weight: 700;
+  color: var(--chai-dark-blue);
+  margin-bottom: 4px;
+}
+
+.rules-detail {
+  font-size: 14px;
+  color: #3d2c00;
+}
